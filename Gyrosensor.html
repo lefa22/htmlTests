@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Gyrosensor Test</title>
+      </head>
+      <body>
+        <h1>Gyrosensor Test</h1>
+        <img src="elefant.jpg"></img>
+        <script>
+            // Get a reference to the first <img> element on the page
+ 
+            var imageElem = document.getElementsByTagName('img')[0],
+            
+            // Create an event handler function for processing the device orientation event
+            
+                handleOrientationEvent = function(e) {
+            
+                    // Get the orientation of the device in 3 axes, known as alpha, beta, and gamma, 
+                    // represented in degrees from the initial orientation of the device on load
+            
+                    var alpha = e.alpha,
+                        beta = e.beta,
+                        gamma = e.gamma;
+            
+                    // Rotate the <img> element in 3 axes according to the device’s orientation
+            
+                    imageElem.style.webkitTransform = 'rotateZ(' + alpha + 'deg) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg)';
+                };
+            
+            // Listen for changes to the device orientation using the gyroscope and fire the event 
+            // handler accordingly
+            
+            window.addEventListener('deviceorientation', handleOrientationEvent, false);
+        </script>
+      </body>
+</html>
