@@ -7,7 +7,9 @@
       <body>
         <h1>Gyrosensor Test</h1>
         <img src="elefant.jpg"></img>
-        <p id="data">data</p>
+        <p id="dataA">alpha</p>
+        <p id="dataB">beta</p>
+        <p id="dataG">gamma</p>
         <script>
             // Get a reference to the first <img> element on the page
  
@@ -27,7 +29,9 @@
                     // Rotate the <img> element in 3 axes according to the device’s orientation
             
                     imageElem.style.webkitTransform = 'rotateZ(' + alpha + 'deg) rotateX(' + beta + 'deg) rotateY(' + gamma + 'deg)';
-                    document.getElementById("data").innerHTML = alpha + ", " + beta + ", " + gamma;
+                    document.getElementById("dataA").innerHTML = alpha;
+                    document.getElementById("dataB").innerHTML = beta;
+                    document.getElementById("dataG").innerHTML = gamma;
                 };
             
             // Listen for changes to the device orientation using the gyroscope and fire the event 
